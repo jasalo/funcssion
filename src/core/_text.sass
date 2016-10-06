@@ -1,0 +1,105 @@
+// Links
+a
+  text-decoration: none
+  &:hover, &:focus
+    text-decoration: none
+    cursor: pointer
+
+// Headings
+
+// Headings' general properties must be set in this file as it is the first
+// one that is imported, otherwise it'll override other property settings such as color, margin, etc...
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+  color: $colorTitle
+  font-weight: 600
+h1, .h1
+  font-size: ($fontBodySize * $headingsMultiplier)
+  margin-top: 0.5em
+  margin-bottom: 0.5em
+h2, .h2
+  font-size: ($fontBodySize * $headingsMultiplier * 0.85)
+  margin-top: 0.4em
+  margin-bottom: 0.4em
+h3, .h3
+  font-size: ($fontBodySize * $headingsMultiplier * 0.75)
+  margin-top: 0.3em
+  margin-bottom: 0.3em
+h4, .h4
+  font-size: ($fontBodySize * $headingsMultiplier * 0.62)
+  margin-top: 0.2em
+  margin-bottom: 0.2em
+h5, .h5
+  font-size: ($fontBodySize * $headingsMultiplier * 0.5)
+  margin-top: 0.15em
+  margin-bottom: 0.15em
+h6, .h6
+  font-size: ($fontBodySize * $headingsMultiplier * 0.4)
+  margin-top: 0.1em
+  margin-bottom: 0.1em
+
+// Font weight
+.txt-bold
+  font-weight: bold
+.txt-light
+  font-weight: lighter
+.txt-normal
+  font-weight: normal
+.txt-italic
+  font-style: italic
+
+.fw100
+  font-weight: 100
+.fw200
+  font-weight: 200
+.fw300
+  font-weight: 300
+.fw400
+  font-weight: 400
+.fw500
+  font-weight: 500
+.fw600
+  font-weight: 600
+.fw700
+  font-weight: 700
+.fw800
+  font-weight: 800
+.fw900
+  font-weight: 900
+
+// Text alignment
+.ta-center
+  text-align: center
+.ta-left
+  text-align: left
+.ta-right
+  text-align: right
+.ta-justify
+  text-align: justify
+
+
+.td-none
+  text-decoration: none
+.td-underline
+  text-decoration: underline
+.td-overline
+  text-decoration: overline
+
+.tt-none
+  text-transform: none
+.tt-uppercase
+  text-transform: uppercase
+.tt-lowercase
+  text-transform: lowercase
+.tt-capitalize
+  text-transform: capitalize
+.tt-inherit
+  text-transform: inherit
+
+
+// Font sizes
+@include prop-by-steps(fs,(font-size))
+@include prop-by-steps(fs,(font-size),'em')
+
+@include prop-by-steps(lh,(line-height))
+@include prop-by-steps(lh,(line-height),'em')
+

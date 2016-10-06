@@ -1,0 +1,63 @@
+@function to-string($value)
+  @return inspect($value)
+
+@function parseInt($str, $radix: 10)
+  $chars: charsFromBase($radix)
+  $result: 0
+  $is-negative: str-index($str, '-') == 1
+  @if $is-negative
+    $str: str-slice($str, 2)
+  @for $i from 1 through str-length($str)
+    $char: str-slice($str, -$i, -$i)
+    $value: str-index($chars, $char) - 1
+    $result: $result + ($value * pow($radix, ($i - 1)))
+  @return if($is-negative, -$result, $result)
+
+@function str-split( $str, $needle, $ret: () )
+  $i: str-index($str, $needle)
+  @if $i == null
+    @return ($str)
+  @else
+    $a: str-slice($str, 0, ($i - 1))
+    $oldRet: $ret
+    @if str-length($a) > 0
+      $ret: append($ret, $a)
+    $newStr: str-slice($str, ($i + 1), str-length($str))
+    @if str-length($newStr) > 0
+      $ret: join($ret, str-split($newStr,$needle,$oldRet))
+  @return $ret
+
+@function str-join($list)
+  $ret: null
+  @each $x in $list
+    $ret: $ret#{$x}
+  @return $ret
+
+
+@mixin prop-by-steps($prefix, $propertyList, $suffix: 'rem', $max: 5, $step: 0.1, $initial: 0 )
+  $complement: null
+  @if $suffix != 'rem'
+    $complement: $suffix
+  // Starts on first step because 0 are the same on any unit, so prop-resets mixin is used
+  $current: $initial + $step
+  @while $current <= $max
+    $defnumber: str-join( str-split( to-string($current), '.') )
+    .#{$prefix}#{$defnumber}#{$complement}
+      @each $prop in $propertyList
+        #{$prop}: #{$current}#{$suffix}
+    $current: $current + $step
+
+@mixin prop-resets($prefix, $propertyList)
+  .#{$prefix}0
+    @each $prop in $propertyList
+      #{$prop}: 0
+
+// TEST
+// $testy: to-string( ((0 + 250)/1000) + ((0 + 250)/1000) )
+// $splitted: str-split($testy,'.')
+// .count-#{length($splitted)}
+//   margin: #{length($splitted)}
+// @each $x in $splitted
+//   .abc-#{$x}
+//     margin: str-join($splitted)
+

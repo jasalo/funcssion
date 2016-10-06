@@ -1,0 +1,79 @@
+// Display
+.block
+  display: block
+.inline
+  display: inline
+.inline-block
+  display: inline-block
+.table
+  display: table
+.table-row
+  display: table-row
+.table-cell
+  display: table-cell
+
+// Overflow
+.of-hidden
+  overflow: hidden
+.of-visible
+  overflow: visible
+.of-scroll
+  overflow: scroll
+.of-auto
+  overflow: auto
+
+.ofx-hidden
+  overflow-x: hidden
+.ofx-visible
+  overflow-x: visible
+.ofx-scroll
+  overflow-x: scroll
+.ofx-auto
+  overflow-x: auto
+
+.ofy-hidden
+  overflow-y: hidden
+.ofy-visible
+  overflow-y: visible
+.ofy-scroll
+  overflow-y: scroll
+.ofy-auto
+  overflow-y: auto
+
+
+// Visibility
+.vsb-visible
+  visibility: visible
+.vsb-hidden
+  visibility: hidden
+.vsb-collapse
+  visibility: collapse
+
+
+// Show/Hide for various screen widths
+
+.rm-hide
+  @media (max-width: $mobileWidth + 1px)
+    display: none
+.rt-hide
+  @media (min-width: $mobileWidth + 1px ) and (max-width: $tabletWidth + 1px)
+    display: none
+.rd-hide
+  @media (min-width: $tabletWidth + 1px) and (max-width: $desktopWidth + 1px)
+    display: none
+.rw-hide
+  @media (min-width: $desktopWidth + 1px)
+    display: none
+
+.rm-show
+  @media (max-width: $mobileWidth)
+    display: block
+.rt-show
+  @media (min-width: $mobileWidth) and (max-width: $tabletWidth)
+    display: block
+.rd-show
+  @media (min-width: $tabletWidth) and (max-width: $desktopWidth)
+    display: block
+.rw-show
+  @media (min-width: $desktopWidth)
+    display: block

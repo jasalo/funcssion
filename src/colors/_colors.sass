@@ -1,0 +1,31 @@
+// Foreground color
+.cl-primary, .cl-primary:hover
+  color: $colorPrimary
+.cl-secondary, .cl-secondary:hover
+  color: $colorSecondary
+.cl-body, .cl-body:hover
+  color: $colorMain
+.cl-title, .cl-title:hover
+  color: $colorTitle
+.cl-contrast, .cl-contrast:hover
+  color: $colorContrast
+
+// Backgrounds
+.bg-primary
+  background: $colorPrimary
+.bg-secondary
+  background: $colorSecondary
+.bg-body
+  background: $colorMain
+.bg-title
+  background: $colorTitle
+.bg-contrast
+  background: $colorContrast
+
+// Links
+a
+  color: $colorPrimary
+  text-decoration: none
+  &:hover, &:focus
+    color: lighten($colorPrimary,8%)
+    text-decoration: none

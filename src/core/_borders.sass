@@ -1,0 +1,14 @@
+$bordersDirections: (bdrt border-top) (bdrr border-right) (bdrb border-bottom) (bdrl border-left)
+
+@each $x in $bordersDirections
+  .#{nth($x,1)}
+    #{nth($x,2)}-width: 1px
+    #{nth($x,2)}-style: solid
+
+// TODO - more widths?
+
+// Misc
+.rounded
+  border-radius: $radiusDefault
+.circular
+  border-radius: 50%
