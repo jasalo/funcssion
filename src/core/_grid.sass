@@ -1,27 +1,17 @@
 .container
   margin-right: auto
   margin-left: auto
-  // padding-left: 15px
-  // padding-right: 15px
   &:before, &:after
     content: ' '
     display: table
   &:after
     clear: both
-  // @media (max-width: $mobileWidth)
-  //   width: 95%
-  // // @media (max-width: $tabletWidth)
-  // //   width: ($tabletWidth * 0.95)
-  // @media (max-width: $tabletWidth)
-  //   // width: ($tabletWidth * 0.95)
-  //   width: 95%
   @media (min-width: $wideWidth)
     width: ($wideWidth * 0.9)
   @media (max-width: $wideWidth)
     width: ($wideWidth * 0.8)
     max-width: 95%
   @media (max-width: $desktopWidth)
-    width: ($desktopWidth * 0.91)
     max-width: 95%
 body
   @media (max-width: $mobileWidth)
@@ -41,12 +31,9 @@ body
 .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9
   position: relative
   min-height: 1px
-  // padding-left: 5px
-  // padding-right: 5px
   box-sizing: border-box
-  // min-width: 100%
 
-
+// TODO - Use a mixin/function
 @media (min-width: $mobileWidth)
   .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9
     float: left

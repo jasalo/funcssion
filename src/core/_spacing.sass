@@ -1,9 +1,9 @@
-.border-box
+.bs-border-box
   box-sizing: border-box
-.content-box
+.bs-content-box
   box-sizing: content-box
 
-// MARGIN -----------------
+// Margins
 $margins: (m (margin)) (mt (margin-top)) (mr (margin-right)) (mb (margin-bottom)) (ml (margin-left)) (mv (margin-top margin-bottom)) (mh (margin-right margin-left))
 
 @each $m in $margins
@@ -12,15 +12,14 @@ $margins: (m (margin)) (mt (margin-top)) (mr (margin-right)) (mb (margin-bottom)
       #{$prop}: auto
 
 @each $x in $margins
-  @include prop-resets(#{nth($x,1)},nth($x,2))
-  @include prop-by-steps(#{nth($x,1)},nth($x,2))
-  @include prop-by-steps(#{nth($x,1)},nth($x,2),'em')
+  @include prop-resets(#{nth($x,1)}, nth($x,2))
+  @include prop-by-steps(#{nth($x,1)}, nth($x,2), 'rem', 2, 0.2)
+  @include prop-by-steps(#{nth($x,1)}, nth($x,2), 'rem', 4, 0.5, 2)
 
-// PADDING -----------------
+// Paddings
 $paddings: (p (padding)) (pt (padding-top)) (pr (padding-right)) (pb (padding-bottom)) (pl (padding-left)) (pv (padding-top padding-bottom)) (ph (padding-right padding-left))
 
 @each $x in $paddings
-  @include prop-resets(#{nth($x,1)},nth($x,2))
-  @include prop-by-steps(#{nth($x,1)},nth($x,2))
-  @include prop-by-steps(#{nth($x,1)},nth($x,2),'em')
-
+  @include prop-resets(#{nth($x,1)}, nth($x,2))
+  @include prop-by-steps(#{nth($x,1)}, nth($x,2), 'rem', 2, 0.2)
+  @include prop-by-steps(#{nth($x,1)}, nth($x,2), 'rem', 4, 0.5, 2)

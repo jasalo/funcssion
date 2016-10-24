@@ -1,15 +1,9 @@
+// Super minimal CSS reset
+
 *, *:before, *:after
   box-sizing: border-box
 html
   -webkit-tap-highlight-color: rgba(black,0)
-body
-  font-family: $fontBody
-  font-size: $fontBodySize
-  line-height: $fontLineHeight
-  color: $colorMain
-  background-color: $colorBackground
-  margin: 0
-  padding: 0
 input, button, select, textarea
   font-family: inherit
   font-size: inherit
@@ -19,8 +13,6 @@ img
   max-width: 100%
   height: auto
 hr
-  margin-top: ($fontBodySize * $fontLineHeight)
-  margin-bottom: ($fontBodySize * $fontLineHeight)
   border: 0
-  border-top: 1px solid rgba($colorMain,0.25)
+  border-top: 1px solid rgba($colorText,0.25)
 

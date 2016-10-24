@@ -1,0 +1,21 @@
+// Colors
+$colorPrimary: #00b8ff
+$colorSecondary: #ff3add
+
+// Text colors
+.cl-primary, .cl-primary:hover
+  color: $colorPrimary
+.cl-secondary, .cl-secondary:hover
+  color: $colorSecondary
+
+// Background colors
+.bg-primary
+  background: $colorPrimary
+.bg-secondary
+  background: $colorSecondary
+
+// Links
+a
+  color: $colorPrimary
+  &:hover, &:focus
+    color: lighten($colorPrimary,8%)

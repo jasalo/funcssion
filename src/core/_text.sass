@@ -1,3 +1,20 @@
+// Font family
+.ff-sans-serif
+  font-family: sans-serif
+.ff-serif
+  font-family: serif
+.ff-monospace
+  font-family: monospace
+.ff-cursive
+  font-family: cursive
+.ff-fantasy
+  font-family: fantasy
+.ff-initial
+  font-family: initial
+// Default system font (varies depending on OS, but aims to always look good). Used in GitHub nowadays for example.
+.ff-system
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
+
 // Links
 a
   text-decoration: none
@@ -13,27 +30,27 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
   color: $colorTitle
   font-weight: 600
 h1, .h1
-  font-size: ($fontBodySize * $headingsMultiplier)
+  font-size: (1rem * $headingsMultiplier)
   margin-top: 0.5em
   margin-bottom: 0.5em
 h2, .h2
-  font-size: ($fontBodySize * $headingsMultiplier * 0.85)
+  font-size: (1rem * $headingsMultiplier * 0.85)
   margin-top: 0.4em
   margin-bottom: 0.4em
 h3, .h3
-  font-size: ($fontBodySize * $headingsMultiplier * 0.75)
+  font-size: (1rem * $headingsMultiplier * 0.75)
   margin-top: 0.3em
   margin-bottom: 0.3em
 h4, .h4
-  font-size: ($fontBodySize * $headingsMultiplier * 0.62)
+  font-size: (1rem * $headingsMultiplier * 0.62)
   margin-top: 0.2em
   margin-bottom: 0.2em
 h5, .h5
-  font-size: ($fontBodySize * $headingsMultiplier * 0.5)
+  font-size: (1rem * $headingsMultiplier * 0.5)
   margin-top: 0.15em
   margin-bottom: 0.15em
 h6, .h6
-  font-size: ($fontBodySize * $headingsMultiplier * 0.4)
+  font-size: (1rem * $headingsMultiplier * 0.4)
   margin-top: 0.1em
   margin-bottom: 0.1em
 
@@ -47,6 +64,17 @@ h6, .h6
 .txt-italic
   font-style: italic
 
+// Font variant
+.fv-normal
+  font-variant: normal
+.fv-small-caps
+  font-variant: small-caps
+
+// Font weight
+.fw-normal
+  font-weight: normal
+.fw-bold
+  font-weight: bold
 .fw100
   font-weight: 100
 .fw200
@@ -76,7 +104,6 @@ h6, .h6
 .ta-justify
   text-align: justify
 
-
 .td-none
   text-decoration: none
 .td-underline
@@ -97,9 +124,11 @@ h6, .h6
 
 
 // Font sizes
-@include prop-by-steps(fs,(font-size))
-@include prop-by-steps(fs,(font-size),'em')
+@include prop-by-steps(fs, (font-size), 'rem', 2, 0.1)
+@include prop-by-steps(fs, (font-size), 'rem', 5, 0.5, 2)
 
-@include prop-by-steps(lh,(line-height))
-@include prop-by-steps(lh,(line-height),'em')
+// Line heights
+@include prop-by-steps(lh, (line-height), 'rem', 2, 0.1)
+@include prop-by-steps(lh, (line-height), 'rem', 5, 0.5, 2)
+@include prop-by-steps(lh, (line-height), 'em', 2, 0.25, 0.5)
 
