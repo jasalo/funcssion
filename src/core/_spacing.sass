@@ -13,7 +13,7 @@ $margins: (m (margin)) (mt (margin-top)) (mr (margin-right)) (mb (margin-bottom)
 
 @each $x in $margins
   @include prop-resets(#{nth($x,1)}, nth($x,2))
-  @include prop-by-steps(#{nth($x,1)}, nth($x,2), 'rem', 2, 0.2)
+  @include prop-by-steps(#{nth($x,1)}, nth($x,2), 'rem', 2, 0.1)
   @include prop-by-steps(#{nth($x,1)}, nth($x,2), 'rem', 4, 0.5, 2)
 
 // Paddings
@@ -21,5 +21,5 @@ $paddings: (p (padding)) (pt (padding-top)) (pr (padding-right)) (pb (padding-bo
 
 @each $x in $paddings
   @include prop-resets(#{nth($x,1)}, nth($x,2))
-  @include prop-by-steps(#{nth($x,1)}, nth($x,2), 'rem', 2, 0.2)
+  @include prop-by-steps(#{nth($x,1)}, nth($x,2), 'rem', 2, 0.1)
   @include prop-by-steps(#{nth($x,1)}, nth($x,2), 'rem', 4, 0.5, 2)
