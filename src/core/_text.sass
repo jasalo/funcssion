@@ -1,134 +1,59 @@
+// Headings
+h1, .h1
+  font-size: $headingsMultiplier
+  margin: .4em 0
+h2, .h2
+  font-size: ($headingsMultiplier * .85)
+  margin: .35em 0
+h3, .h3
+  font-size: ($headingsMultiplier * .72)
+  margin: .3em 0
+h4, .h4
+  font-size: ($headingsMultiplier * .6)
+  margin: .2em 0
+h5, .h5
+  font-size: ($headingsMultiplier * .48)
+  margin: .15em 0
+h6, .h6
+  font-size: ($headingsMultiplier * .4)
+  margin: .125em 0
+
 // Font family
-.ff-sans-serif
-  font-family: sans-serif
-.ff-serif
-  font-family: serif
-.ff-monospace
-  font-family: monospace
-.ff-cursive
-  font-family: cursive
-.ff-fantasy
-  font-family: fantasy
-.ff-initial
-  font-family: initial
+$fontFamilies: sans-serif serif monospace cursive fantasy initial
+@include prop-by-values(ff-, font-family, $fontFamilies)
 // Default system font (varies depending on OS, but aims to always look good). Used in GitHub nowadays for example.
 .ff-system
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"
 
-// Links
-a
-  text-decoration: none
-  &:hover, &:focus
-    text-decoration: none
-    cursor: pointer
-
-// Headings
-
-// Headings' general properties must be set in this file as it is the first
-// one that is imported, otherwise it'll override other property settings such as color, margin, etc...
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
-  color: $colorTitle
-  font-weight: 600
-h1, .h1
-  font-size: (1rem * $headingsMultiplier)
-  margin-top: 0.5em
-  margin-bottom: 0.5em
-h2, .h2
-  font-size: (1rem * $headingsMultiplier * 0.85)
-  margin-top: 0.4em
-  margin-bottom: 0.4em
-h3, .h3
-  font-size: (1rem * $headingsMultiplier * 0.75)
-  margin-top: 0.3em
-  margin-bottom: 0.3em
-h4, .h4
-  font-size: (1rem * $headingsMultiplier * 0.62)
-  margin-top: 0.2em
-  margin-bottom: 0.2em
-h5, .h5
-  font-size: (1rem * $headingsMultiplier * 0.5)
-  margin-top: 0.15em
-  margin-bottom: 0.15em
-h6, .h6
-  font-size: (1rem * $headingsMultiplier * 0.4)
-  margin-top: 0.1em
-  margin-bottom: 0.1em
-
-// Font weight
-.txt-bold
-  font-weight: bold
-.txt-light
-  font-weight: lighter
-.txt-normal
-  font-weight: normal
-.txt-italic
-  font-style: italic
-
 // Font variant
-.fv-normal
-  font-variant: normal
-.fv-small-caps
-  font-variant: small-caps
+$fontVariants: normal small-caps
+@include prop-by-values(fv-, font-variant, $fontVariants)
 
 // Font weight
-.fw-normal
-  font-weight: normal
-.fw-bold
-  font-weight: bold
-.fw100
-  font-weight: 100
-.fw200
-  font-weight: 200
-.fw300
-  font-weight: 300
-.fw400
-  font-weight: 400
-.fw500
-  font-weight: 500
-.fw600
-  font-weight: 600
-.fw700
-  font-weight: 700
-.fw800
-  font-weight: 800
-.fw900
-  font-weight: 900
+$fontWeights: lighter normal bold italic
+@include prop-by-values(fw-, font-weight, $fontWeights)
+$fontWeightsNumbers: 100 200 300 400 500 600 700 800 900
+@include prop-by-values(fw, font-weight, $fontWeightsNumbers)
 
 // Text alignment
-.ta-center
-  text-align: center
-.ta-left
-  text-align: left
-.ta-right
-  text-align: right
-.ta-justify
-  text-align: justify
+$textAlignments: center left right justify
+@include prop-by-values(ta-, text-align, $textAlignments)
 
-.td-none
-  text-decoration: none
-.td-underline
-  text-decoration: underline
-.td-overline
-  text-decoration: overline
+// Text decoration
+$textDecorations: none underline overline
+@include prop-by-values(td-, text-decoration, $textDecorations)
 
-.tt-none
-  text-transform: none
-.tt-uppercase
-  text-transform: uppercase
-.tt-lowercase
-  text-transform: lowercase
-.tt-capitalize
-  text-transform: capitalize
-.tt-inherit
-  text-transform: inherit
-
+// Text transform
+$textTransforms: none uppercase lowercase capitalize inherit
+@include prop-by-values(tt-, text-transform, $textTransforms)
 
 // Font sizes
-@include prop-by-steps(fs, (font-size), 'rem', 2, 0.1, 0.4)
-@include prop-by-steps(fs, (font-size), 'rem', 4, 0.5, 2)
+@include prop-by-steps(fs, (font-size), 'rem', 2, .1, .4)
+@include prop-by-steps(fs, (font-size), 'rem', 4, .5, 2)
+@include prop-by-steps(fs, (font-size), 'em', 2, .1, .4)
 
 // Line heights
-@include prop-by-steps(lh, (line-height), 'rem', 2, 0.1, 0.4)
-@include prop-by-steps(lh, (line-height), 'rem', 4, 0.5, 2)
-@include prop-by-steps(lh, (line-height), 'em', 2, 0.1, 0.4)
+@include prop-by-steps(lh, (line-height), 'rem', 2, .1, .4)
+@include prop-by-steps(lh, (line-height), 'rem', 4, .5, 2)
+@include prop-by-steps(lh, (line-height), 'em', 2, .1, .4)
 

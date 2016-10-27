@@ -1,20 +1,533 @@
 .ta-center
   .circular
-    img.logo.rounded.pt2.pb0(src="/img/logo.png")
-  h1.fs3.mb0.cl-secondary.fw600 fun
+    img.logo.rounded.pt16.pb0.pb0(src="/img/logo.png")
+  h1.fs3.mv0.cl-secondary.fw600 fun
     span.cl-primary css
     | ion
-  h2.fs14.cl-text.fw300.mt0.mb1 The atomic CSS library
+  h2.fs13.cl-text.fw300.mt0.mb05 The atomic CSS library
 .container
-  .mv3.ta-center.fs18.fw300
-    a.fw400(target='_blank',href='/funcssion-min.css') Download 
-      span.fw600 v0.1&nbsp;
-      | here
-  h4.mt4.mb2
-      p Documentation coming soon!
-  h2 Core
-  p ...
-  hr
+  .clearfix.lh12em.cl-text.ta-justify.fs11.flex.flex-items-center
+    .col-6.pv2
+      p
+        strong.fw500.cl-title funcssion
+        |  is a set of <em>really simple</em> CSS classes, with a single purpose, inspired by the philosophy behind 
+        a(href='https://en.wikipedia.org/wiki/Pure_function)') pure functions
+        | , that'll do their best not to get in your way.
+      p This basically means, it <em>attempts</em> to avoid side-effects.
+      p Why <em>attempt</em> you might ask? Well, because of the very nature of CSS, adding up properties or complex classes to an element, usually does not work as expected.
+    .col-6
+      .mt1.mb2.ta-center.fs1.fw300
+        a.btn.btn-secondary.fw300(target='_blank',href='/css/funcssion.css') Get 
+          span.fw600 v0.1 here
+        .fs08.cl-text (~4kb gzipped)
+  .mv3
+  h2 Use it
+  p Simply include the following tag in your HTML document to include the latest version (temporary)
+    strong.cl-title *
+    | :
+  pre.code
+    code.html.
+      &lt;link href="http://funcssion.com/css/funcssion.css" rel="stylesheet"&gt;
+  .fs07.cl-text
+    strong *
+    |  A CDN link is preferred but not yet available.
+  .mv3
+  h2 How It Works
+  p
+    strong funcssion
+    |  does not perform any kind of reset over HTML elements. Its use, together with other CSS frameworks/libraries or code of your own, is <em>non-invasive</em>, thus perfectly viable. All classes set 
+    strong just one or two properties
+    | . Most just set one.
+  p Most classes are named using a <strong>prefix</strong> and a <em>mix</em> of the following: an <strong>orientation</strong>, a <strong>dash</strong> (
+    span.ff-monospace -
+    | ), a possible <strong>value</strong> of the property or a <strong>suffix</strong> (unit). Some examples are:
+  pre.code
+    code.css.
+      .va-middle {
+        vertical-align: middle;
+      }
+
+      .pr1 {
+        padding-right: 1rem;
+      }
+
+      .mv12 {
+        margin-top: 1.2rem;
+        margin-bottom: 1.2rem;
+      }
+  p Other classes are simply values of properties that are unambiguous and pretty common in CSS, such as:
+  pre.code
+    code.css.
+      .inline-block {
+        display: inline-block;
+      }
+
+      .absolute {
+        position: absolute;
+      }
+  .mv3
+  h2 The Rules
+  p Just keep these in mind:
+  ul.cl-text
+    li.pv01 Prefixes are usually written using the initials of a property name. i.e.: 
+      strong.ff-monospace.fs13em ta
+      |  means 
+      strong.ff-monospace.fs13em text-align
+      | ; 
+      strong.ff-monospace.fs13em mb
+      |  means 
+      strong.ff-monospace.fs13em margin-bottom
+      | , etc.
+    li.pv01 When not specified, default unit is 
+      strong.ff-monospace.fs13em rem
+    li.pv01
+      |  Other possible <strong>suffixes</strong> (units) are 
+      strong.ff-monospace.fs13em em
+      | , 
+      strong.ff-monospace.fs13em vh
+      |  and 
+      strong.ff-monospace.fs13em pct
+      |   (%)
+    li.pv01 Classes whose value is NOT a number, <strong>use a dash(-)</strong>
+    li.pv01 Classes whose value is a number, <strong>do not use a dash(-)</strong>
+    li.pv01 Numbers are usually decimals under 4, whose decimal mark is ignored. i.e.: 
+      strong.ff-monospace.fs13 .mt23
+      |  means 
+      strong.ff-monospace.fs13 margin-top
+      |  of 
+      strong.ff-monospace.fs13 2.3rem
+  .mv3
+  h2 Quick Reference
+  p Below is all you need to understand and use <strong>funcssion</strong>.
+  .clearfix
+    h2.cl-primary.mt1.mb15 Spacing
+    p For 
+      strong.ff-monospace.fs12 margin
+      |  and 
+      strong.ff-monospace.fs12 padding
+      | , 
+      strong.ff-monospace.fs12 rem
+      |  units are used.
+      | They range from 
+      strong 0
+      | ~
+      strong 2
+      |  every 
+      strong .1
+      |  and 
+      strong 2.5
+      | ~
+      strong 4
+      |  every 
+      strong .5
+      | .
+    .col-6.pr2
+      h4.pb03 Numeric
+      table.shorthand.w100pct
+        tr
+          th.fs09.ta-left.cl-secondary Prefix
+          th.fs09.ta-left.cl-secondary Properties
+        - var pfxs = []
+        - pfxs.push(["m","margin"])
+        - pfxs.push(["mt","margin-top"])
+        - pfxs.push(["mr","margin-right"])
+        - pfxs.push(["mb","margin-bottom"])
+        - pfxs.push(["ml","margin-left"])
+        - pfxs.push(["mv","margin-top margin-bottom"])
+        - pfxs.push(["mh","margin-left margin-right"])
+        - pfxs.push(["p","padding"])
+        - pfxs.push(["pt","padding-top"])
+        - pfxs.push(["pr","padding-right"])
+        - pfxs.push(["pb","padding-bottom"])
+        - pfxs.push(["pl","padding-left"])
+        - pfxs.push(["mv","margin-top margin-bottom"])
+        - pfxs.push(["mh","margin-left margin-right"])
+        each p in pfxs
+          tr
+            td.fw600.cl-title= p[0]
+            td.ff-monospace.fs11
+              pre.m0
+                code.css.
+                  #{p[1]}
+    .col-6
+      h4.pb06.cl-text Examples
+      pre.code
+        code.css.
+          .mv14 {
+            margin-top: 1.4rem;
+            margin-bottom: 1.4rem;
+          }
+          .mh2 {
+            margin-left: 2rem;
+            margin-right: 2rem;
+          }
+          .m3 {
+            margin: 3rem;
+          }
+          .m0 {
+            margin: 0;
+          }
+
+          .p0 {
+            padding: 0;
+          }
+          .pt08 {
+            padding-top: 0.8rem;
+          }
+          .p25 {
+            padding: 2.5rem;
+          }
+          .p4 {
+            padding: 4rem;
+          }
+  .clearfix.mt15
+    .col-6.pr2
+      h4.pb03 Non-numeric
+      table.shorthand.w100pct
+        tr
+          th.fs09.ta-left.cl-secondary Prefix
+          th.fs09.ta-left.cl-secondary Properties
+        tr
+          td.fw600.cl-title bs 
+          td.ff-monospace.fs11 box-sizing
+    .col-6
+      h4.pb06.cl-text Examples
+      pre.code
+        code.css.
+          .bs-border-box {
+            box-sizing: border-box;
+          }
+          .bs-content-box {
+            box-sizing: content-box;
+          }
+  .clearfix.mt2
+    .cl-secondary &mdash;
+    h2.cl-primary.mt2.mb15 Text
+    p For 
+      strong.ff-monospace.fs12 font-size
+      |  and 
+      strong.ff-monospace.fs12 line-height
+      | , 
+      strong.ff-monospace.fs12 rem
+      |  units range from 
+      strong 0.4
+      | ~
+      strong 2
+      |  every 
+      strong .1
+      |  and 
+      strong 2.5
+      | ~
+      strong 4
+      |  every 
+      strong 0.5
+      | , and 
+      strong.ff-monospace.fs12 em
+      |  units range from 
+      strong 0.4
+      | ~
+      strong 2
+      |  every 
+      strong .1
+      | .
+    .col-6.pr2
+      h4.pb03 Font Size &amp; Line Height
+      table.shorthand.w100pct
+        tr
+          th.fs09.ta-left.cl-secondary Prefix
+          th.fs09.ta-left.cl-secondary Property
+        - var pfxs = []
+        - pfxs.push(["fs","font-size"])
+        - pfxs.push(["lh","line-height"])
+        each p in pfxs
+          tr
+            td.fw600.cl-title= p[0]
+            td.ff-monospace.fs11= p[1]
+    .col-6
+      h4.pb06.cl-text Examples
+      pre.code
+        code.css.
+          .fs11 {
+            font-size: 1.1rem;
+          }
+          .fs09em {
+            font-size: 0.9em;
+          }
+
+          .lh15 {
+            line-height: 1.5rem;
+          }
+          .lh2em {
+            line-height: 2em;
+          }
+  .clearfix.mt15
+    h4.pb03 Headings
+    p Heading classes are also set for the tags themselves, so 
+      strong.ff-monospace.fs12 &lt;h1&gt;
+      |  and 
+      strong.ff-monospace.fs12 &lt;div class="h1"&gt;
+      |  are equivalent.
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Example
+      tr
+        td.ff-monospace.fw600.cl-title .h1
+        td
+          h1 h1 Heading
+      tr
+        td.ff-monospace.fw600.cl-title .h2
+        td
+          h2 h2 Heading
+      tr
+        td.ff-monospace.fw600.cl-title .h3
+        td
+          h3 h3 Heading
+      tr
+        td.ff-monospace.fw600.cl-title .h4
+        td
+          h4 h4 Heading
+      tr
+        td.ff-monospace.fw600.cl-title .h5
+        td
+          h5 h5 Heading
+      tr
+        td.ff-monospace.fw600.cl-title .h6
+        td
+          h6 h6 Heading
+  .clearfix.mt15
+    h4.pb03 Font Weight
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["fw-normal","font-weight: normal"])
+      - cs.push(["fw-bold","font-weight: bold"])
+      - cs.push(["fw-lighter","font-weight: lighter"])
+      - cs.push(["fw-italic","font-weight: italic"])
+      - cs.push(["fw100","font-weight: 100"])
+      - cs.push(["fw200","font-weight: 200"])
+      - cs.push(["fw300","font-weight: 300"])
+      - cs.push(["fw400","font-weight: 400"])
+      - cs.push(["fw500","font-weight: 500"])
+      - cs.push(["fw600","font-weight: 600"])
+      - cs.push(["fw700","font-weight: 700"])
+      - cs.push(["fw800","font-weight: 800"])
+      - cs.push(["fw900","font-weight: 900"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            pre.m0
+              code.css.
+                { #{c[1]}; }
+    .clearfix.mt15
+    h4.pb03 Font Family
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["ff-sans-serif","font-family: sans-serif"])
+      - cs.push(["ff-serif","font-family: serif"])
+      - cs.push(["ff-monospace","font-family: monospace"])
+      - cs.push(["ff-cursive","font-family: cursive"])
+      - cs.push(["ff-fantasy","font-family: fantasy"])
+      - cs.push(["ff-system","font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\",\n\t\tRoboto, Helvetica,Arial, sans-serif, \"Apple Color Emoji\",\n\t\t\"Segoe UI Emoji\", \"Segoe UI Symbol\""])
+      - cs.push(["ff-initial","font-family: initial"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+    .clearfix.mt15
+    h4.pb03 Font Variant
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["fv-normal","font-variant: normal"])
+      - cs.push(["fv-small-caps","font-variant: small-caps"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+    .clearfix.mt15
+    h4.pb03 Text Alignment
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["ta-center","text-align: center"])
+      - cs.push(["ta-left","text-align: left"])
+      - cs.push(["ta-right","text-align: right"])
+      - cs.push(["ta-justify","text-align: justify"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+    .clearfix.mt15
+    h4.pb03 Text Decoration
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["tt-none","text-decoration: none"])
+      - cs.push(["tt-underline","text-decoration: underline"])
+      - cs.push(["tt-overline","text-decoration: overline"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+    .clearfix.mt15
+    h4.pb03 Text Transform
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["td-none","text-transform: none"])
+      - cs.push(["td-uppercase","text-transform: uppercase"])
+      - cs.push(["td-lowercase","text-transform: lowercase"])
+      - cs.push(["td-capitalize","text-transform: capitalize"])
+      - cs.push(["td-inherit","text-transform: inherit"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+  .clearfix
+
+  .clearfix.mt2
+    .cl-secondary &mdash;
+    h2.cl-primary.mt2.mb15 Positioning
+    table.shorthand.w100pct
+        tr
+          th.fs09.ta-left.cl-secondary.p05 Class Name
+          th.fs09.ta-left.cl-secondary.p05 Meaning
+        - var cs = []
+        - cs.push(["absolute","position: absolute"])
+        - cs.push(["relative","position: relative"])
+        - cs.push(["fixed","position: fixed"])
+        - cs.push(["flex", "display: flex"])
+        - cs.push(["flex-items-center", "align-items: center"])
+        - cs.push(["fl-left","float: left"])
+        - cs.push(["fl-right","float: right"])
+        - cs.push(["top0","top: 0"])
+        - cs.push(["right0","right: 0"])
+        - cs.push(["bottom0","bottom: 0"])
+        - cs.push(["left0","left: 0"])
+        - cs.push(["top-auto","top: auto"])
+        - cs.push(["right-auto","right: auto"])
+        - cs.push(["bottom-auto","bottom: auto"])
+        - cs.push(["left-auto","left: auto"])
+        - cs.push(["va-middle", "vertical-align: middle"])
+        - cs.push(["va-top", "vertical-align: top"])
+        - cs.push(["va-bottom", "vertical-align: bottom"])
+        - cs.push(["va-baseline", "vertical-align: baseline"])
+        each c in cs
+          tr.fs11
+            td.ff-monospace.fw600.cl-title .#{c[0]}
+            td
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+  .clearfix.mt2
+    .cl-secondary &mdash;
+    h2.cl-primary.mt2.mb15 Displaying
+    h4.pb03 Display
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["block","display: block"])
+      - cs.push(["inline","display: inline"])
+      - cs.push(["inline-block","display: inline-block"])
+      - cs.push(["table","display: table"])
+      - cs.push(["table-row","display: table-row"])
+      - cs.push(["table-cell","display: table-cell"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+    .clearfix.mt15
+    h4.pb03 Overflow
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["of-hidden","overflow: hidden"])
+      - cs.push(["of-visible","overflow: visible"])
+      - cs.push(["of-scroll","overflow: scroll"])
+      - cs.push(["of-auto","overflow: auto"])
+      - cs.push(["ofx-hidden","overflow-x: hidden"])
+      - cs.push(["ofx-visible","overflow-x: visible"])
+      - cs.push(["ofx-scroll","overflow-x: scroll"])
+      - cs.push(["ofx-auto","overflow-x: auto"])
+      - cs.push(["ofy-hidden","overflow-y: hidden"])
+      - cs.push(["ofy-visible","overflow-y: visible"])
+      - cs.push(["ofy-scroll","overflow-y: scroll"])
+      - cs.push(["ofy-auto","overflow-y: auto"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+    .clearfix.mt15
+    h4.pb03 Visibility
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["v-visible","visibility: visible"])
+      - cs.push(["v-hidden","visibility: hidden"])
+      - cs.push(["v-collapse","visibility: collapse"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+  .clearfix.mt2
+    .cl-secondary &mdash;
+    h2.cl-primary.mt2.mb15 Miscellaneous
+
+  .mv4
+  hr.hr
   .ta-right
     | By&nbsp;
     a(href='http://github.com/jasalo/funcssion',target='_blank') @jasalo

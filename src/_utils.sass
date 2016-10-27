@@ -59,3 +59,7 @@
     @each $prop in $propertyList
       #{$prop}: 0
 
+@mixin prop-by-values($prefix, $property, $values)
+  @each $v in $values
+    .#{$prefix}#{$v}
+      #{$property}: #{$v}

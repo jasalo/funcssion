@@ -1,6 +1,24 @@
-// Colors
-$colorPrimary: #00b8ff
-$colorSecondary: #ff3add
+// Super minimal CSS reset
+
+*, *:before, *:after
+  box-sizing: border-box
+
+input, button, select, textarea
+  font-family: inherit
+
+img
+  vertical-align: middle
+  max-width: 100%
+  height: auto
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6
+  color: $colorTitle
+  font-weight: 600
+
+.clearfix
+  @media (max-width: $mobileWidth)
+    &.flex
+      display: block
 
 // Text colors
 .cl-primary, .cl-primary:hover
@@ -17,5 +35,39 @@ $colorSecondary: #ff3add
 // Links
 a
   color: $colorPrimary
+  text-decoration: none
   &:hover, &:focus
+    text-decoration: none
     color: lighten($colorPrimary,8%)
+    cursor: pointer
+
+// Buttons
+.btn-primary
+  background-color: $colorPrimary
+.btn-secondary
+  background-color: $colorSecondary
+
+pre.code
+  background: rgba(black,0.025)
+  border-left: 3px solid $colorSecondary
+  padding: 0.5rem 0.8rem
+  code
+    background: transparent
+
+table.shorthand
+  width: 100%
+  td:first-child
+    width: 25%
+    padding: 0.4rem 0.2rem
+  td
+    border-bottom: 1px solid rgba(black,0.05)
+
+p
+  line-height: 1.25em
+  strong
+    font-weight: 600
+    color: $colorTitle
+
+ul
+  strong
+    color: $colorTitle

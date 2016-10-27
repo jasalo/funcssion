@@ -2,191 +2,21 @@
   margin-right: auto
   margin-left: auto
   &:before, &:after
-    content: ' '
+    content: ''
     display: table
   &:after
     clear: both
-  @media (min-width: $wideWidth)
-    width: ($wideWidth * 0.9)
-  @media (max-width: $wideWidth)
-    width: ($wideWidth * 0.8)
-    max-width: 95%
-  @media (max-width: $desktopWidth)
-    max-width: 95%
-body
-  @media (max-width: $mobileWidth)
-    overflow-x: hidden
-.row
-  margin-left: -5px
-  margin-right: -5px
-  &:before, &:after
-    content: " "
-    display: table
-  &:after
-    clear: both
-  @media (max-width: $mobileWidth)
-    &.flex
-      display: block
 
-.col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9
-  position: relative
-  min-height: 1px
-  box-sizing: border-box
+@mixin cols-mixin($prefix, $property, $max: 12)
+  $current: 1
+  @while $current <= $max
+    .#{$prefix}-#{$current}
+      #{$property}: #{$current * 100 / 12 }%
+      @if $prefix == col
+        float: left
+    $current: $current + 1
 
-// TODO - Use a mixin/function
-@media (min-width: $mobileWidth)
-  .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9
-    float: left
-
-  .col-12
-    width: 100%
-
-  .col-11
-    width: 91.66666667%
-
-  .col-10
-    width: 83.33333333%
-
-  .col-9
-    width: 75%
-
-  .col-8
-    width: 66.66666667%
-
-  .col-7
-    width: 58.33333333%
-
-  .col-6
-    width: 50%
-
-  .col-5
-    width: 41.66666667%
-
-  .col-4
-    width: 33.33333333%
-
-  .col-3
-    width: 25%
-
-  .col-2
-    width: 16.66666667%
-
-  .col-1
-    width: 8.33333333%
-
-  .col-pull-12
-    right: 100%
-
-  .col-pull-11
-    right: 91.66666667%
-
-  .col-pull-10
-    right: 83.33333333%
-
-  .col-pull-9
-    right: 75%
-
-  .col-pull-8
-    right: 66.66666667%
-
-  .col-pull-7
-    right: 58.33333333%
-
-  .col-pull-6
-    right: 50%
-
-  .col-pull-5
-    right: 41.66666667%
-
-  .col-pull-4
-    right: 33.33333333%
-
-  .col-pull-3
-    right: 25%
-
-  .col-pull-2
-    right: 16.66666667%
-
-  .col-pull-1
-    right: 8.33333333%
-
-  .col-pull-0
-    right: auto
-
-  .col-push-12
-    left: 100%
-
-  .col-push-11
-    left: 91.66666667%
-
-  .col-push-10
-    left: 83.33333333%
-
-  .col-push-9
-    left: 75%
-
-  .col-push-8
-    left: 66.66666667%
-
-  .col-push-7
-    left: 58.33333333%
-
-  .col-push-6
-    left: 50%
-
-  .col-push-5
-    left: 41.66666667%
-
-  .col-push-4
-    left: 33.33333333%
-
-  .col-push-3
-    left: 25%
-
-  .col-push-2
-    left: 16.66666667%
-
-  .col-push-1
-    left: 8.33333333%
-
-  .col-push-0
-    left: auto
-
-  .col-offset-12
-    margin-left: 100%
-
-  .col-offset-11
-    margin-left: 91.66666667%
-
-  .col-offset-10
-    margin-left: 83.33333333%
-
-  .col-offset-9
-    margin-left: 75%
-
-  .col-offset-8
-    margin-left: 66.66666667%
-
-  .col-offset-7
-    margin-left: 58.33333333%
-
-  .col-offset-6
-    margin-left: 50%
-
-  .col-offset-5
-    margin-left: 41.66666667%
-
-  .col-offset-4
-    margin-left: 33.33333333%
-
-  .col-offset-3
-    margin-left: 25%
-
-  .col-offset-2
-    margin-left: 16.66666667%
-
-  .col-offset-1
-    margin-left: 8.33333333%
-
-  .col-offset-0
-    margin-left: 0
+// .col-x
+@include cols-mixin(col, width)
+// .col-offset-x
+@include cols-mixin(col-left, margin-left)

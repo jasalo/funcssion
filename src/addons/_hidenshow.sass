@@ -1,0 +1,27 @@
+// Show/Hide for various screen widths
+
+.rm-hide
+  @media (max-width: $mobileWidth + 1px)
+    display: none
+.rt-hide
+  @media (min-width: $mobileWidth + 1px ) and (max-width: $tabletWidth + 1px)
+    display: none
+.rd-hide
+  @media (min-width: $tabletWidth + 1px) and (max-width: $desktopWidth + 1px)
+    display: none
+.rw-hide
+  @media (min-width: $desktopWidth + 1px)
+    display: none
+
+.rm-show
+  @media (max-width: $mobileWidth)
+    display: block
+.rt-show
+  @media (min-width: $mobileWidth) and (max-width: $tabletWidth)
+    display: block
+.rd-show
+  @media (min-width: $tabletWidth) and (max-width: $desktopWidth)
+    display: block
+.rw-show
+  @media (min-width: $desktopWidth)
+    display: block

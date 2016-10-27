@@ -1,20 +1,18 @@
-.abs
-  position: absolute
-.rel
-  position: relative
-.fixed
-  position: fixed
+$positions: absolute relative fixed
+@include prop-by-values(null, position, $positions)
 
-.fl-left
-  float: left
-.fl-right
-  float: right
+.flex-items-center
+  align-items: center
+// TODO: More Flexbox stuff - Perhaps in a separate file?
+
+$floats: left right none initial inherit 
+@include prop-by-values(fl-, float, $floats)
 
 .clearfix
-  &::before, &::after
-    content: ' '
+  &:before, &:after
+    content: ''
     display: table
-  &::after
+  &:after
     clear: both
 
 .top0
@@ -35,22 +33,6 @@
 .left-auto
   left: auto
 
-.va-middle
-  vertical-align: middle
-.va-top
-  vertical-align: top
-.va-bottom
-  vertical-align: bottom
-.va-baseline
-  vertical-align: baseline
+$verticalAlignments: middle top bottom baseline
+@include prop-by-values(va-, vertical-align, $verticalAlignments)
 
-.mw-100pct
-  max-width: 100%
-.mw-auto
-  max-width: auto
-
-// TODO: Flexbox stuff
-.flex
-  display: flex
-.flex-items-center
-  align-items: center
