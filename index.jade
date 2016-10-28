@@ -1,44 +1,46 @@
-.ta-center
-  .circular
-    img.logo.rounded.pt16.pb0.pb0(src="/img/logo.png")
-  h1.fs3.mv0.cl-secondary.fw600 fun
+.container.mh-auto
+  img.logo.rounded.pt4(src="/img/logo.png")
+  .h1.fs3.mt05.cl-secondary.fw600 fun
     span.cl-primary css
     | ion
-  h2.fs13.cl-text.fw300.mt0.mb05 The atomic CSS library
-.container
+  .fs14.cl-text.fw300.mt0.mb15.op08 The atomic CSS library
+.container.mh-auto
   .clearfix.lh12em.cl-text.ta-justify.fs11.flex.flex-items-center
-    .col-6.pv2
+    .col-6.pv3
       p
         strong.fw500.cl-title funcssion
         |  is a set of <em>really simple</em> CSS classes, with a single purpose, inspired by the philosophy behind 
         a(href='https://en.wikipedia.org/wiki/Pure_function)') pure functions
-        | , that'll do their best not to get in your way.
-      p This basically means, it <em>attempts</em> to avoid side-effects.
-      p Why <em>attempt</em> you might ask? Well, because of the very nature of CSS, adding up properties or complex classes to an element, usually does not work as expected.
+        | .
+      p This basically means, they <em>attempt</em> to avoid side-effects.
+      p It's not a full-fledged CSS framework, but rather a very handy set of classes that'll help you prototype really fast and understand what your components look like just by looking at your HTML code, not browsing through endless, repetitive CSS files and classes.
     .col-6
       .mt1.mb2.ta-center.fs1.fw300
         a.btn.btn-secondary.fw300(target='_blank',href='/css/funcssion.css') Get 
           span.fw600 v0.1 here
-        .fs08.cl-text (~4kb gzipped)
-  .mv3
-  h2 Use it
-  p Simply include the following tag in your HTML document to include the latest version (temporary)
+        .fs08.cl-text (&lt; 4kb gzipped)
+        br
+        br
+        a(class="github-button" href="https://github.com/jasalo/funcssion" data-style="mega" data-count-href="/jasalo/funcssion/stargazers" data-count-api="/repos/jasalo/funcssion#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star jasalo/funcssion on GitHub") Star
+  .mv4
+  .h2 Use it
+  p Simply include the following tag in your HTML document to include the latest version
     strong.cl-title *
     | :
   pre.code
     code.html.
-      &lt;link href="http://funcssion.com/css/funcssion.css" rel="stylesheet"&gt;
+      &lt;link href="https://funcssion.com/css/funcssion.css" rel="stylesheet"&gt;
   .fs07.cl-text
     strong *
-    |  A CDN link is preferred but not yet available.
-  .mv3
-  h2 How It Works
+    |  A CDNJS link is preferred but not yet available.
+  .mv4
+  .h2 How It Works
   p
     strong funcssion
     |  does not perform any kind of reset over HTML elements. Its use, together with other CSS frameworks/libraries or code of your own, is <em>non-invasive</em>, thus perfectly viable. All classes set 
     strong just one or two properties
     | . Most just set one.
-  p Most classes are named using a <strong>prefix</strong> and a <em>mix</em> of the following: an <strong>orientation</strong>, a <strong>dash</strong> (
+  p <em>Most</em> classes are named using a <strong>prefix</strong> and a <em>mix</em> of the following: an <strong>orientation</strong>, a <strong>dash</strong> (
     span.ff-monospace -
     | ), a possible <strong>value</strong> of the property or a <strong>suffix</strong> (unit). Some examples are:
   pre.code
@@ -65,9 +67,9 @@
       .absolute {
         position: absolute;
       }
-  .mv3
-  h2 The Rules
-  p Just keep these in mind:
+  .mv4
+  .h2 The Rules
+  p Just keep these in mind and it'll help you memorize the class names, or intuitively deduce them.
   ul.cl-text
     li.pv01 Prefixes are usually written using the initials of a property name. i.e.: 
       strong.ff-monospace.fs13em ta
@@ -89,18 +91,21 @@
       strong.ff-monospace.fs13em pct
       |   (%)
     li.pv01 Classes whose value is NOT a number, <strong>use a dash(-)</strong>
-    li.pv01 Classes whose value is a number, <strong>do not use a dash(-)</strong>
+    li.pv01 Classes whose value is a number, <strong>do not use a dash(-)</strong>. Except for 
+      a.fw600.cl-primary(href='#grid') Grid
+      |  classes
     li.pv01 Numbers are usually decimals under 4, whose decimal mark is ignored. i.e.: 
       strong.ff-monospace.fs13 .mt23
       |  means 
       strong.ff-monospace.fs13 margin-top
       |  of 
       strong.ff-monospace.fs13 2.3rem
-  .mv3
-  h2 Quick Reference
-  p Below is all you need to understand and use <strong>funcssion</strong>.
-  .clearfix
-    h2.cl-primary.mt1.mb15 Spacing
+  .mv4
+  .h2 Quick Reference
+  p Below is all you need to understand and use <strong>funcssion</strong>:
+  .clearfix#spacing
+    .mt3.mb2.cl-secondary &mdash;
+    a.h2.cl-primary.mt1.mb15(href='#spacing') Spacing
     p For 
       strong.ff-monospace.fs12 margin
       |  and 
@@ -121,8 +126,9 @@
       |  every 
       strong .5
       | .
+    .clearfix.mt25
     .col-6.pr2
-      h4.pb03 Numeric
+      .h4.pb03 Numeric
       table.shorthand.w100pct
         tr
           th.fs09.ta-left.cl-secondary Prefix
@@ -150,7 +156,7 @@
                 code.css.
                   #{p[1]}
     .col-6
-      h4.pb06.cl-text Examples
+      .h4.pb06.cl-text Examples
       pre.code
         code.css.
           .mv14 {
@@ -180,29 +186,9 @@
           .p4 {
             padding: 4rem;
           }
-  .clearfix.mt15
-    .col-6.pr2
-      h4.pb03 Non-numeric
-      table.shorthand.w100pct
-        tr
-          th.fs09.ta-left.cl-secondary Prefix
-          th.fs09.ta-left.cl-secondary Properties
-        tr
-          td.fw600.cl-title bs 
-          td.ff-monospace.fs11 box-sizing
-    .col-6
-      h4.pb06.cl-text Examples
-      pre.code
-        code.css.
-          .bs-border-box {
-            box-sizing: border-box;
-          }
-          .bs-content-box {
-            box-sizing: content-box;
-          }
-  .clearfix.mt2
-    .cl-secondary &mdash;
-    h2.cl-primary.mt2.mb15 Text
+  .clearfix.mt2#text
+    .mt3.mb2.cl-secondary &mdash;
+    a.block.h2.cl-primary.mt2.mb15(href='#text') Text
     p For 
       strong.ff-monospace.fs12 font-size
       |  and 
@@ -231,7 +217,8 @@
       strong .1
       | .
     .col-6.pr2
-      h4.pb03 Font Size &amp; Line Height
+      .clearfix.mt25
+      .h4.pb03 Font Size &amp; Line Height
       table.shorthand.w100pct
         tr
           th.fs09.ta-left.cl-secondary Prefix
@@ -244,7 +231,8 @@
             td.fw600.cl-title= p[0]
             td.ff-monospace.fs11= p[1]
     .col-6
-      h4.pb06.cl-text Examples
+      .clearfix.mt25
+      .h4.pb06.cl-text Examples
       pre.code
         code.css.
           .fs11 {
@@ -260,8 +248,8 @@
           .lh2em {
             line-height: 2em;
           }
-  .clearfix.mt15
-    h4.pb03 Headings
+  .clearfix.mt25
+    .h4.pb03 Headings
     p Heading classes are also set for the tags themselves, so 
       strong.ff-monospace.fs12 &lt;h1&gt;
       |  and 
@@ -274,29 +262,29 @@
       tr
         td.ff-monospace.fw600.cl-title .h1
         td
-          h1 h1 Heading
+          .h1 h1 Heading
       tr
         td.ff-monospace.fw600.cl-title .h2
         td
-          h2 h2 Heading
+          .h2 h2 Heading
       tr
         td.ff-monospace.fw600.cl-title .h3
         td
-          h3 h3 Heading
+          .h3 h3 Heading
       tr
         td.ff-monospace.fw600.cl-title .h4
         td
-          h4 h4 Heading
+          .h4 h4 Heading
       tr
         td.ff-monospace.fw600.cl-title .h5
         td
-          h5 h5 Heading
+          .h5 h5 Heading
       tr
         td.ff-monospace.fw600.cl-title .h6
         td
-          h6 h6 Heading
-  .clearfix.mt15
-    h4.pb03 Font Weight
+          .h6 h6 Heading
+  .clearfix.mt25
+    .h4.pb03 Font Weight
     table.shorthand.w100pct
       tr
         th.fs09.ta-left.cl-secondary.p05 Class Name
@@ -322,8 +310,8 @@
             pre.m0
               code.css.
                 { #{c[1]}; }
-    .clearfix.mt15
-    h4.pb03 Font Family
+    .clearfix.mt25
+    .h4.pb03 Font Family
     table.shorthand.w100pct
       tr
         th.fs09.ta-left.cl-secondary.p05 Class Name
@@ -335,7 +323,6 @@
       - cs.push(["ff-cursive","font-family: cursive"])
       - cs.push(["ff-fantasy","font-family: fantasy"])
       - cs.push(["ff-system","font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\",\n\t\tRoboto, Helvetica,Arial, sans-serif, \"Apple Color Emoji\",\n\t\t\"Segoe UI Emoji\", \"Segoe UI Symbol\""])
-      - cs.push(["ff-initial","font-family: initial"])
       each c in cs
         tr.fs11
           td.ff-monospace.fw600.cl-title .#{c[0]}
@@ -344,8 +331,8 @@
               pre.m0
                 code.css.
                   { #{c[1]}; }
-    .clearfix.mt15
-    h4.pb03 Font Variant
+    .clearfix.mt25
+    .h4.pb03 Font Variant
     table.shorthand.w100pct
       tr
         th.fs09.ta-left.cl-secondary.p05 Class Name
@@ -361,8 +348,8 @@
               pre.m0
                 code.css.
                   { #{c[1]}; }
-    .clearfix.mt15
-    h4.pb03 Text Alignment
+    .clearfix.mt25
+    .h4.pb03 Text Alignment
     table.shorthand.w100pct
       tr
         th.fs09.ta-left.cl-secondary.p05 Class Name
@@ -380,8 +367,8 @@
               pre.m0
                 code.css.
                   { #{c[1]}; }
-    .clearfix.mt15
-    h4.pb03 Text Decoration
+    .clearfix.mt25
+    .h4.pb03 Text Decoration
     table.shorthand.w100pct
       tr
         th.fs09.ta-left.cl-secondary.p05 Class Name
@@ -398,8 +385,8 @@
               pre.m0
                 code.css.
                   { #{c[1]}; }
-    .clearfix.mt15
-    h4.pb03 Text Transform
+    .clearfix.mt25
+    .h4.pb03 Text Transform
     table.shorthand.w100pct
       tr
         th.fs09.ta-left.cl-secondary.p05 Class Name
@@ -418,11 +405,9 @@
               pre.m0
                 code.css.
                   { #{c[1]}; }
-  .clearfix
-
-  .clearfix.mt2
-    .cl-secondary &mdash;
-    h2.cl-primary.mt2.mb15 Positioning
+  .clearfix.mt2#positioning
+    .mt3.mb2.cl-secondary &mdash;
+    a.block.h2.cl-primary.mt2.mb15(href='#positioning') Positioning
     table.shorthand.w100pct
         tr
           th.fs09.ta-left.cl-secondary.p05 Class Name
@@ -454,10 +439,32 @@
               pre.m0
                 code.css.
                   { #{c[1]}; }
-  .clearfix.mt2
-    .cl-secondary &mdash;
-    h2.cl-primary.mt2.mb15 Displaying
-    h4.pb03 Display
+  .clearfix.mt2#colors
+    .mt3.mb2.cl-secondary &mdash;
+    a.block.h2.cl-primary.mt2.mb15(href='#colors') Colors
+    table.shorthand.w100pct
+        tr
+          th.fs09.ta-left.cl-secondary.p05 Class Name
+          th.fs09.ta-left.cl-secondary.p05 Meaning
+        - var cs = []
+        - cs.push(["cl-text","color: #888"])
+        - cs.push(["cl-title","color: #333"])
+        - cs.push(["cl-contrast","color: white"])
+        - cs.push(["bg-text","background: #888"])
+        - cs.push(["bg-title","background: #333"])
+        - cs.push(["bg-contrast","background: white"])
+        each c in cs
+          tr.fs11
+            td.ff-monospace.fw600.cl-title .#{c[0]}
+            td
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+  .clearfix.mt2#displaying
+    .mt3.mb2.cl-secondary &mdash;
+    a.block.h2.cl-primary.mt2.mb15(href='#displaying') Displaying
+    .clearfix.mt25
+    .h4.pb03 Display
     table.shorthand.w100pct
       tr
         th.fs09.ta-left.cl-secondary.p05 Class Name
@@ -477,8 +484,8 @@
               pre.m0
                 code.css.
                   { #{c[1]}; }
-    .clearfix.mt15
-    h4.pb03 Overflow
+    .clearfix.mt25
+    .h4.pb03 Overflow
     table.shorthand.w100pct
       tr
         th.fs09.ta-left.cl-secondary.p05 Class Name
@@ -504,8 +511,8 @@
               pre.m0
                 code.css.
                   { #{c[1]}; }
-    .clearfix.mt15
-    h4.pb03 Visibility
+    .clearfix.mt25
+    .h4.pb03 Visibility
     table.shorthand.w100pct
       tr
         th.fs09.ta-left.cl-secondary.p05 Class Name
@@ -522,12 +529,191 @@
               pre.m0
                 code.css.
                   { #{c[1]}; }
-  .clearfix.mt2
-    .cl-secondary &mdash;
-    h2.cl-primary.mt2.mb15 Miscellaneous
+    .clearfix.mt25
+    .h4.pb03 Box Sizing
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["bs-border-box","box-sizing: border-box"])
+      - cs.push(["bs-content-box","box-sizing: content-box"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+    .clearfix.mt25
+    .h4.pb03 Opacity
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["op0","opacity: 0"])
+      - cs.push(["op01","opacity: 0.1"])
+      - cs.push(["op02","opacity: 0.2"])
+      - cs.push(["op03","opacity: 0.3"])
+      - cs.push(["op04","opacity: 0.4"])
+      - cs.push(["op05","opacity: 0.5"])
+      - cs.push(["op06","opacity: 0.6"])
+      - cs.push(["op07","opacity: 0.7"])
+      - cs.push(["op08","opacity: 0.8"])
+      - cs.push(["op09","opacity: 0.9"])
+      - cs.push(["op1","opacity: 1"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+  .clearfix.mt2#grid
+    .mt3.mb2.cl-secondary &mdash;
+    a.block.h2.cl-primary.mt2.mb15(href='#grid') Grid
+    .clearfix.mt25
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["col-1","width: 8.33333%"])
+      - cs.push(["col-2","width: 16.66667%"])
+      - cs.push(["col-3","width: 25%"])
+      - cs.push(["col-4","width: 33.33334%"])
+      - cs.push(["col-5","width: 41.66667%"])
+      - cs.push(["col-6","width: 50%"])
+      - cs.push(["col-7","width: 58.33334%"])
+      - cs.push(["col-8","width: 66.66667%"])
+      - cs.push(["col-9","width: 75%"])
+      - cs.push(["col-10","width: 83.33334%"])
+      - cs.push(["col-11","width: 91.66667%"])
+      - cs.push(["col-12","width: 100%"])
+      - cs.push(["col-left-1","margin-left: 8.33333%"])
+      - cs.push(["col-left-2","margin-left: 16.66667%"])
+      - cs.push(["col-left-3","margin-left: 25%"])
+      - cs.push(["col-left-4","margin-left: 33.33334%"])
+      - cs.push(["col-left-5","margin-left: 41.66667%"])
+      - cs.push(["col-left-6","margin-left: 50%"])
+      - cs.push(["col-left-7","margin-left: 58.33334%"])
+      - cs.push(["col-left-8","margin-left: 66.66667%"])
+      - cs.push(["col-left-9","margin-left: 75%"])
+      - cs.push(["col-left-10","margin-left: 83.33334%"])
+      - cs.push(["col-left-11","margin-left: 91.66667%"])
+      - cs.push(["col-left-12","margin-left: 100%"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+  .clearfix.mt2#sizing
+    .mt3.mb2.cl-secondary &mdash;
+    a.block.h2.cl-primary.mt2.mb15(href='#sizing') Sizing
+    .clearfix.mt25
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["w100pct","width: 100%"])
+      - cs.push(["w-auto","width: auto"])
+      - cs.push(["h100vh","height: 100vh"])
+      - cs.push(["h100pct","height: 100%"])
+      - cs.push(["h-auto","height: auto"])
+      - cs.push(["mw100pct","max-width: 100%"])
+      - cs.push(["mw-auto","max-width: auto"])
+      - cs.push(["mh100pct","max-height: 100%"])
+      - cs.push(["mh-auto","max-height: auto"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+  .clearfix.mt2#borders
+    .mt3.mb2.cl-secondary &mdash;
+    a.block.h2.cl-primary.mt2.mb15(href='#borders') Borders
+    .clearfix.mt25
+    .h4.pb03 Border Style
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["bs-solid","border-style: solid"])
+      - cs.push(["bs-dashed","border-style: dashed"])
+      - cs.push(["bs-dotted","border-style: dotted"])
+      - cs.push(["bs-double","border-style: double"])
+      - cs.push(["bs-groove","border-style: groove"])
+      - cs.push(["bs-hidden","border-style: hidden"])
+      - cs.push(["bs-inset","border-style: inset"])
+      - cs.push(["bs-none","border-style: none"])
+      - cs.push(["bs-outset","border-style: outset"])
+      - cs.push(["bs-ridge","border-style: ridge"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+    .clearfix.mt25
+    .h4.pb03 Border Radius
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["br0","border-radius: 0"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+  .clearfix.mt2#misc
+    .mt3.mb2.cl-secondary &mdash;
+    a.block.h2.cl-primary.mt2.mb15(href='#misc') Miscellaneous
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["hr","border-top: 1px solid rgba(0,0,0,0.08)"])
+      - cs.push(["circular","border-radius: 50%"])
+      - cs.push(["cursor-auto","cursor: auto"])
+      - cs.push(["cursor-default","cursor: default"])
+      - cs.push(["cursor-not-allowed","cursor: not-allowed"])
+      - cs.push(["cursor-pointer","cursor: pointer"])
+      - cs.push(["cursor-text","cursor: text"])
+      - cs.push(["cursor-wait","cursor: wait"])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            .mw100pct.ofx-scroll
+              pre.m0
+                code.css.
+                  { #{c[1]}; }
+  .clearfix.mt2#extras
+    .mt3.mb2.cl-secondary &mdash;
+    a.block.h2.cl-primary.mt2.mb15(href='#extras') Extras
+    p Additional sets of classes such as a responsive grid, buttons, etc. are still in the works and will be documented soon.
 
   .mv4
-  hr.hr
+  .mv2.hr
   .ta-right
     | By&nbsp;
-    a(href='http://github.com/jasalo/funcssion',target='_blank') @jasalo
+    a(href='https://github.com/jasalo/funcssion',target='_blank') @jasalo

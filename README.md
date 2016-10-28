@@ -2,8 +2,8 @@
 
 _The atomic CSS library._
 
-**funcssion** is an opinionated set of CSS classes inspired by the philosophy behind [pure functions](https://en.wikipedia.org/wiki/Pure_function).
-This basically means, it _attempts_ to avoid side-effects.
+**funcssion** is a heavily opinionated set of _really simple_ CSS classes inspired by the philosophy behind [pure functions](https://en.wikipedia.org/wiki/Pure_function).
+This basically means, they _attempt_ to avoid side-effects.
 
 Why _attempt_ you might ask? Well, because of the very nature of CSS, adding up properties or complex classes to an element, usually does not work as expected.
 

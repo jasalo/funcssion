@@ -1,11 +1,12 @@
 // In the absence of a better location for these classes... Useful nonetheless!
 
-hr.hr
-  border: 0
+.hr
   border-top: 1px solid rgba(black,0.08)
-
-.cursor-pointer
-  cursor: pointer
 
 .circular
   border-radius: 50%
+
+// Display - There are way TOO many cursors, so here's a small selection:
+$cursors: auto default not-allowed pointer text wait
+@include prop-by-values(cursor-, cursor, $cursors)
+

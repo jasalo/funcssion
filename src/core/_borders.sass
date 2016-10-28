@@ -1,9 +1,8 @@
-$bordersDirections: (bt border-top) (br border-right) (bb border-bottom) (bl border-left)
-
-@each $x in $bordersDirections
-  .#{nth($x,1)}
-    #{nth($x,2)}-width: 1px
-    #{nth($x,2)}-style: solid
+// TODO: Use? Implements for various widths (1px ~ 5px maybe)?
+// $bordersDirections: (bt border-top) (br border-right) (bb border-bottom) (bl border-left)
+// @each $x in $bordersDirections
+//   .#{nth($x,1)}
+//     #{nth($x,2)}-width: 1px
 
 $borderStyles: solid dashed dotted double groove hidden inset none outset ridge
 @include prop-by-values(bs-, border-style, $borderStyles)

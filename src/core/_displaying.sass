@@ -13,3 +13,10 @@ $overflowsY: hidden visible scroll auto
 // Visibility
 $visibilities: visible hidden collapse
 @include prop-by-values(v-, visibility, $visibilities)
+
+// Box Sizing
+$boxSizings: border-box content-box inherit initial
+@include prop-by-values(bs-, box-sizing, $boxSizings)
+
+// Opacity
+@include prop-by-steps(op, (opacity), null, 1, .1, -.1)

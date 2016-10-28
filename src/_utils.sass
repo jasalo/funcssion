@@ -59,6 +59,8 @@
     @each $prop in $propertyList
       #{$prop}: 0
 
+
+// Most used function to generate classes representing a property and all their possible values, usually.
 @mixin prop-by-values($prefix, $property, $values)
   @each $v in $values
     .#{$prefix}#{$v}

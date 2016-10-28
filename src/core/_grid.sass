@@ -1,12 +1,4 @@
-.container
-  margin-right: auto
-  margin-left: auto
-  &:before, &:after
-    content: ''
-    display: table
-  &:after
-    clear: both
-
+// Columns mixin
 @mixin cols-mixin($prefix, $property, $max: 12)
   $current: 1
   @while $current <= $max

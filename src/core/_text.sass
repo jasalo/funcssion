@@ -1,25 +1,19 @@
 // Headings
-h1, .h1
+.h1
   font-size: $headingsMultiplier
-  margin: .4em 0
-h2, .h2
+.h2
   font-size: ($headingsMultiplier * .85)
-  margin: .35em 0
-h3, .h3
+.h3
   font-size: ($headingsMultiplier * .72)
-  margin: .3em 0
-h4, .h4
+.h4
   font-size: ($headingsMultiplier * .6)
-  margin: .2em 0
-h5, .h5
+.h5
   font-size: ($headingsMultiplier * .48)
-  margin: .15em 0
-h6, .h6
+.h6
   font-size: ($headingsMultiplier * .4)
-  margin: .125em 0
 
 // Font family
-$fontFamilies: sans-serif serif monospace cursive fantasy initial
+$fontFamilies: sans-serif serif monospace cursive fantasy
 @include prop-by-values(ff-, font-family, $fontFamilies)
 // Default system font (varies depending on OS, but aims to always look good). Used in GitHub nowadays for example.
 .ff-system
