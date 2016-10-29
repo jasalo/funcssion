@@ -10,7 +10,7 @@
       p
         strong.fw500.cl-title funcssion
         |  is a set of <em>really simple</em> CSS classes, with a single purpose, inspired by the philosophy behind 
-        a(href='https://en.wikipedia.org/wiki/Pure_function)') pure functions
+        a(href='https://en.wikipedia.org/wiki/Pure_function') pure functions
         | .
       p This basically means, they <em>attempt</em> to avoid side-effects.
       p It's not a full-fledged CSS framework, but rather a very handy set of classes that'll help you prototype really fast and understand what your components look like just by looking at your HTML code, not browsing through endless, repetitive CSS files and classes.
@@ -146,11 +146,11 @@
         - pfxs.push(["pr","padding-right"])
         - pfxs.push(["pb","padding-bottom"])
         - pfxs.push(["pl","padding-left"])
-        - pfxs.push(["mv","margin-top margin-bottom"])
-        - pfxs.push(["mh","margin-left margin-right"])
+        - pfxs.push(["pv","padding-top padding-bottom"])
+        - pfxs.push(["ph","padding-left padding-right"])
         each p in pfxs
-          tr
-            td.fw600.cl-title= p[0]
+          tr.fs11
+            td.ff-monospace.fw600.cl-title .#{p[0]}
             td.ff-monospace.fs11
               pre.m0
                 code.css.
@@ -220,15 +220,15 @@
       .clearfix.mt25
       .h4.pb03 Font Size &amp; Line Height
       table.shorthand.w100pct
-        tr
+        tr.fs11
           th.fs09.ta-left.cl-secondary Prefix
           th.fs09.ta-left.cl-secondary Property
         - var pfxs = []
         - pfxs.push(["fs","font-size"])
         - pfxs.push(["lh","line-height"])
         each p in pfxs
-          tr
-            td.fw600.cl-title= p[0]
+          tr.fs11
+            td.ff-monospace.fw600.cl-title .#{p[0]}
             td.ff-monospace.fs11= p[1]
     .col-6
       .clearfix.mt25
@@ -256,7 +256,7 @@
       strong.ff-monospace.fs12 &lt;div class="h1"&gt;
       |  are equivalent.
     table.shorthand.w100pct
-      tr
+      tr.fs11
         th.fs09.ta-left.cl-secondary.p05 Class Name
         th.fs09.ta-left.cl-secondary.p05 Example
       tr
