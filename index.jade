@@ -247,7 +247,7 @@
           }
   .clearfix.mt25
     .h4.pb03 Headings
-    p Heading classes are also set for the tags themselves, so 
+    p Heading classes are intended to be "similar" to the tags themselves, so that 
       strong.ff-monospace.fs12 &lt;h1&gt;
       |  and 
       strong.ff-monospace.fs12 &lt;div class="h1"&gt;
@@ -290,7 +290,6 @@
       - cs.push(["fw-normal","font-weight: normal"])
       - cs.push(["fw-bold","font-weight: bold"])
       - cs.push(["fw-lighter","font-weight: lighter"])
-      - cs.push(["fw-italic","font-weight: italic"])
       - cs.push(["fw100","font-weight: 100"])
       - cs.push(["fw200","font-weight: 200"])
       - cs.push(["fw300","font-weight: 300"])
@@ -320,6 +319,23 @@
       - cs.push(["ff-cursive","font-family: cursive"])
       - cs.push(["ff-fantasy","font-family: fantasy"])
       - cs.push(["ff-system","font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\",\n\t\tRoboto, Helvetica,Arial, sans-serif, \"Apple Color Emoji\",\n\t\t\"Segoe UI Emoji\", \"Segoe UI Symbol\""])
+      each c in cs
+        tr.fs11
+          td.ff-monospace.fw600.cl-title .#{c[0]}
+          td
+            pre.m0
+                code.css.
+                  { #{c[1]}; }
+    .clearfix.mt25
+    .h4.pb03 Font Style
+    table.shorthand.w100pct
+      tr
+        th.fs09.ta-left.cl-secondary.p05 Class Name
+        th.fs09.ta-left.cl-secondary.p05 Meaning
+      - var cs = []
+      - cs.push(["fs-normal","font-style: normal"])
+      - cs.push(["fs-italic","font-style: italic"])
+      - cs.push(["fs-oblique","font-style: oblique"])
       each c in cs
         tr.fs11
           td.ff-monospace.fw600.cl-title .#{c[0]}

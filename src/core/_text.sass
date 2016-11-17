@@ -23,8 +23,12 @@ $fontFamilies: sans-serif serif monospace cursive fantasy
 $fontVariants: normal small-caps
 @include prop-by-values(fv-, font-variant, $fontVariants)
 
+// Font variant
+$fontStyles: normal italic oblique
+@include prop-by-values(fv-, font-style, $fontStyles)
+
 // Font weight
-$fontWeights: lighter normal bold italic
+$fontWeights: lighter normal bold
 @include prop-by-values(fw-, font-weight, $fontWeights)
 $fontWeightsNumbers: 100 200 300 400 500 600 700 800 900
 @include prop-by-values(fw, font-weight, $fontWeightsNumbers)
