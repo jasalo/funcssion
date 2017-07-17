@@ -1,9 +1,9 @@
 // Columns mixin
 @mixin cols-mixin($prefix, $property, $max: 12)
-  $current: 1
+  $current: 0
   @while $current <= $max
     .#{$prefix}-#{$current}
-      #{$property}: #{$current * 100 / 12 }%
+      #{$property}: $current * 100% / 12
       @if $prefix == col
         float: left
     $current: $current + 1

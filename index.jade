@@ -478,12 +478,28 @@
         th.fs09.ta-left.cl-secondary.p05 Class Name
         th.fs09.ta-left.cl-secondary.p05 Meaning
       - var cs = []
+      - cs.push(["none","display: none"])
       - cs.push(["block","display: block"])
+      - cs.push(["contents","display: contents"])
+      - cs.push(["flex","display: flex"])
+      - cs.push(["flow-root","display: flow-root"])
+      - cs.push(["grid","display: grid"])
       - cs.push(["inline","display: inline"])
       - cs.push(["inline-block","display: inline-block"])
+      - cs.push(["inline-flex","display: inline-flex"])
+      - cs.push(["inline-grid","display: inline-grid"])
+      - cs.push(["inline-table","display: inline-table"])
+      - cs.push(["list-item","display: list-item"])
+      - cs.push(["run-in","display: run-in"])
       - cs.push(["table","display: table"])
-      - cs.push(["table-row","display: table-row"])
+      - cs.push(["table-caption","display: table-caption"])
       - cs.push(["table-cell","display: table-cell"])
+      - cs.push(["table-column","display: table-column"])
+      - cs.push(["table-column-group","display: table-column-group"])
+      - cs.push(["table-footer-group","display: table-footer-group"])
+      - cs.push(["table-header-group","display: table-header-group"])
+      - cs.push(["table-row","display: table-row"])
+      - cs.push(["table-row-group","display: table-row-group"])
       each c in cs
         tr.fs11
           td.ff-monospace.fw600.cl-title .#{c[0]}
@@ -584,6 +600,7 @@
         th.fs09.ta-left.cl-secondary.p05 Class Name
         th.fs09.ta-left.cl-secondary.p05 Meaning
       - var cs = []
+      - cs.push(["col-0","width: 0%"])
       - cs.push(["col-1","width: 8.33333%"])
       - cs.push(["col-2","width: 16.66667%"])
       - cs.push(["col-3","width: 25%"])
